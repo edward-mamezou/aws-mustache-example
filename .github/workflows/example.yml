@@ -1,0 +1,30 @@
+name: example
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v3
+      - name: configure aws credentials
+        id: credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          role-session-name: samplerolesession
+          aws-region: "ap-northeast-3"
+      - name: edgardleal/mustache-template-action@v1.0.0
+        env:
+          AWS_ACCOUNT_ID: ${{ steps.credentials.outputs.aws-account-id }}
+        with:
+          input: templates/example.yaml
+          output: example.yaml 
+      - run: |
+          aws s3 cp example.yaml s3://${{ secrets.BUCKET_NAME }}

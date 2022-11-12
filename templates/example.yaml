@@ -1,0 +1,2 @@
+aws:
+  AWS_ACCOUNT_ID: {{ AWS_ACCOUNT_ID }}
