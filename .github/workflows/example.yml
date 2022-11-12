@@ -19,7 +19,7 @@ jobs:
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: "ap-northeast-3"
-      - uses: edgardleal/mustache-template-action@v1.0.0
+      - uses: edgardleal/mustache-template-action@v1.0.4
         env:
           AWS_ACCOUNT_ID: ${{ steps.credentials.outputs.aws-account-id }}
         with:
