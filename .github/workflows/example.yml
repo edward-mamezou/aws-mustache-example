@@ -21,7 +21,7 @@ jobs:
           aws-region: "ap-northeast-3"
       - uses: edgardleal/mustache-template-action@v1.0.4
         env:
-          AWS_ACCOUNT_ID: ${{ steps.credentials.outputs.aws-account-id }}
+          ENV: ${{ steps.credentials.outputs.aws-account-id }}
         with:
           input: templates/example.yaml
           output: example.yaml 
