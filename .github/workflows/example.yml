@@ -18,7 +18,6 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          role-session-name: examplerolesession
           aws-region: "ap-northeast-3"
       - uses: edgardleal/mustache-template-action@v1.0.0
         env:
