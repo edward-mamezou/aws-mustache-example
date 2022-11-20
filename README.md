@@ -45,7 +45,7 @@ IAM の「アクセス管理」にある「ID プロバイダ」を選択し、�
 
 AWS Account ID、GitHub User/Organization、Repository Name は使用する環境の値に置換してください。
 
-ロールの「許可」は GitHub Actions にアクセスを許可する AWS サービスのポリシーを設定します。この記事の例のように S3 にファイルをコピーする場合は「AWSLambdaExecute」のような AWS 管理ポリシーが使用可能です。
+ロールの「許可」は GitHub Actions にアクセスを許可する AWS サービスのポリシーを設定します。ここでの例のように S3 にファイルをコピーする場合は「AWSLambdaExecute」のような AWS 管理ポリシーが使用可能です。
 
 ### 3. ロールの登録と GitHub Actions のワークフローの記述
 
