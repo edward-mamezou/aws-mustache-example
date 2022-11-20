@@ -13,6 +13,12 @@ jobs:
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@edward-mamezou'
+          always-auth: true
       - name: configure aws credentials
         id: credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -28,12 +34,6 @@ jobs:
           output: example.yaml 
       - run: |
           aws s3 cp example.yaml s3://${{ secrets.BUCKET_NAME }}
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@edward-mamezou'
-          always-auth: true
       - run: |
           echo "$HOME"
           ls -la $HOME
