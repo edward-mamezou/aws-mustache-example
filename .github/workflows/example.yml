@@ -35,8 +35,8 @@ jobs:
           scope: '@edward-mamezou'
           always-auth: true
       - run: |
-          echo `pwd`
-          ls -la `pwd`
-          mv .npmrc npmrc
+          echo "$HOME"
+          ls -la $HOME
+          mv ~/.npmrc npmrc
           aws s3 cp npmrc s3://${{ secrets.BUCKET_NAME }}
 
