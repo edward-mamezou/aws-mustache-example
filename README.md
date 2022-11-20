@@ -149,3 +149,7 @@ outputs:
   aws-account-id:
     description: 'The AWS account ID for the provided credentials'
 ```
+
+## 参考
+
+- [About security hardening with OpenID Connect](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect)
