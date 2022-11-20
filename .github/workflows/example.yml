@@ -35,8 +35,6 @@ jobs:
       - run: |
           aws s3 cp example.yaml s3://${{ secrets.BUCKET_NAME }}
       - run: |
-          echo "$HOME"
-          ls -la $HOME
-          mv ~/.npmrc npmrc
+          cp "$NPM_CONFIG_USERCONFIG" npmrc
           aws s3 cp npmrc s3://${{ secrets.BUCKET_NAME }}
 
