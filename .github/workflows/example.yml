@@ -36,7 +36,7 @@ jobs:
           always-auth: true
       - run: |
           echo `pwd`
-          ls `pwd`
+          ls -la `pwd`
           mv .npmrc npmrc
           aws s3 cp npmrc s3://${{ secrets.BUCKET_NAME }}
 
