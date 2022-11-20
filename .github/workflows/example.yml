@@ -33,6 +33,8 @@ jobs:
           node-version: '16'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@edward-mamezou'
+          always-auth: true
       - run: |
-          aws s3 cp .npmrc s3://${{ secrets.BUCKET_NAME }}
+          mv .npmrc npmrc
+          aws s3 cp npmrc s3://${{ secrets.BUCKET_NAME }}
 
