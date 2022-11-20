@@ -1,3 +1,2 @@
 aws:
   AWS_ACCOUNT_ID: {{ ENV }}
-  GITHUB_TOKEN: {{ GITHUB_TOKEN }}

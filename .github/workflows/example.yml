@@ -28,7 +28,6 @@ jobs:
       - uses: edgardleal/mustache-template-action@v1.0.4
         env:
           ENV: ${{ steps.credentials.outputs.aws-account-id }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           input: templates/example.yaml
           output: example.yaml 
@@ -37,4 +36,3 @@ jobs:
       - run: |
           cp "$NPM_CONFIG_USERCONFIG" npmrc
           aws s3 cp npmrc s3://${{ secrets.BUCKET_NAME }}
-
