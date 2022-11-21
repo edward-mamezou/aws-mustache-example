@@ -150,6 +150,38 @@ outputs:
     description: 'The AWS account ID for the provided credentials'
 ```
 
+## GitHub Actions で取得される ID Token のペイロード
+
+```json
+{
+  "jti": "e571c55f-8062-46f1-95f9-bb3f2b31a540",
+  "sub": "repo:edward-mamezou/aws-mustache-example:ref:refs/heads/main",
+  "aud": "api://AzureADTokenExchange",
+  "ref": "refs/heads/main",
+  "sha": "3d23a0f45aa5c61321154dde99baef977068aabd",
+  "repository": "edward-mamezou/aws-mustache-example",
+  "repository_owner": "edward-mamezou",
+  "repository_owner_id": "49175994",
+  "run_id": "3515299060",
+  "run_number": "21",
+  "run_attempt": "1",
+  "repository_visibility": "public",
+  "repository_id": "565189530",
+  "actor_id": "49175994",
+  "actor": "edward-mamezou",
+  "workflow": "example",
+  "head_ref": "",
+  "base_ref": "",
+  "event_name": "push",
+  "ref_type": "branch",
+  "job_workflow_ref": "edward-mamezou/aws-mustache-example/.github/workflows/example.yml@refs/heads/main",
+  "iss": "https://token.actions.githubusercontent.com",
+  "nbf": 1669040492,
+  "exp": 1669041392,
+  "iat": 1669041092
+}
+```
+
 ## 参考
 
 - [About security hardening with OpenID Connect](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect)
