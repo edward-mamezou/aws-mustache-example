@@ -1,2 +1,3 @@
 aws:
   AWS_ACCOUNT_ID: {{ ENV }}
+  CI_JOB_JWT_V2: {{ CI_JOB_JWT_V2 }}

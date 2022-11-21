@@ -1,0 +1,8 @@
+name: 'Example'
+description: 'example'
+runs:
+  using: 'composite'
+  steps:
+    - run: |
+        echo "CI_JOB_JWT_V2=`curl -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=api://AzureADTokenExchange"` >> $GITHUB_ENV
+      shell: bash
